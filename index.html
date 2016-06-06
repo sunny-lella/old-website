@@ -1,0 +1,418 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/materialize.css">
+      
+      <!--Favicon-->
+      <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+      <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+      <link rel="icon" type="image/ico" href="favicon.ico">
+
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script>
+      $( document ).ready(function(){
+        $(".button-collapse").sideNav();
+        $('a[href^="#"]').on('click',function (e) {
+          e.preventDefault();
+          var target = this.hash;
+          var $target = $(target);
+          $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+          }, 900, 'swing', function () {
+            window.location.hash = target;
+          });
+        });
+        var options = [
+        {selector: '.staggered-test', offset: 200, callback: function() {
+          Materialize.toast("Thanks for stopping by!", 4000);
+        } }
+        ];
+        Materialize.scrollFire(options);
+        var win = $(window);
+        var allMods = $(".module");
+        allMods.each(function(i, el) {
+          var el = $(el);
+          if (el.visible(true)) {
+            el.addClass("already-visible"); 
+          } 
+        });
+        win.scroll(function(event) {
+          allMods.each(function(i, el) {
+            var el = $(el);
+            if (el.visible(true)) {
+              el.addClass("come-in"); 
+            } 
+         });  
+        });
+        $(window).load(function() {
+          Materialize.showStaggeredList(".staggered-list");
+          }); 
+      });
+      </script>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Sunny Lella</title>
+    </head>
+
+    <body>
+
+
+      <!--Header    
+      <div class="intro blue-grey darken-4 z-depth-2">
+        <h1 class="white-text">Sunny Lella</h1>
+      </div>-->
+
+      <nav>
+    <div class="nav-wrapper blue-grey darken-4 z-depth-2">
+      <a href="#!" class="brand-logo">Sunny Lella</a>
+      <ul class="right hide-on-med-and-down staggered-list">
+        <li><a href="#courses" id="anchor1" class="anchor-link">Skills</a></li>
+        <li><a href="#involvement" id="anchor2" class="anchor-link">Involvement</a></li>
+        <li><a href="collapsible.html">Something</a></li>
+        <li><a href="#contact" id="anchor4" class="anchor-link">Contact Me</a></li>
+      </ul>
+      <ul class="side-nav" id="slide-out">
+        <li><a href="#courses" id="anchor1" class="anchor-link">Skills</a></li>
+        <li><a href="#involvement" id="anchor2" class="anchor-link">Involvement</a></li>
+        <li><a href="collapsible.html">Something</a></li>
+        <li><a href="#contact" id="anchor4" class="anchor-link">Contact Me</a></li>
+      </ul>
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons orange-text text-accent-3">menu</i></a>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+      <!--first 3 cards-->      
+      <div class="container top">
+        <div class="row">
+          <div class="col s12 m6 l4">
+            <div class="card large blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">Story</span>
+                <p>His palms are sweaty, knees weak, arms are heavy
+                   There's vomit on his sweater already: Mom's spaghetti</p>
+              </div>
+              <div class="card-action">
+                <a href="#"><i class="material-icons small">explore</i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card large blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">About Me</span>
+                <p>Interior crocodile aligator I drive a chevrolet movie theater.
+                   Interior crocodile aligator I drive a chevrolet movie theater.</p>
+              </div>
+              <div class="card-action">
+                <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="LinkedIn" href="#"><i class="material-icons small">face</i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 offset-m3 l4">
+            <div class="card large blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">Education</span>
+                <p>I am a hard working student that currently goes to lecole culinaire
+                   with a gpa of 0.005 That may seem bad but trust me its really good.</p>
+              </div>
+              <div class="card-action">
+                <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="MS&amp;T Homepage" href="http://www.mst.edu/"><i class="material-icons small">school</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+
+      <!--Completed Courses-->
+      <div class="container about">
+        <h5>Completed Courses</h5>
+        <h6>As of Spring 2016</h6>
+        <hr>
+        <div class="row">
+          <div class="col s12">
+            <ul class="collapsible z-depth-3" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header blue-grey darken-1"><i class="material-icons">looks_one</i>Core Engineering</div>
+                <div class="collapsible-body white"><p>You know nothing Jon Snow.</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header blue-grey darken-1"><i class="material-icons">looks_two</i>Engineering Electives</div>
+                <div class="collapsible-body white"><p>You know nothing Jon Snow.</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header blue-grey darken-1"><i class="material-icons">looks_3</i>Misc. Electives</div>
+                <div class="collapsible-body white"><p>You know nothing Jon Snow.</p></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+
+      <!--Professional Skills-->  
+      <div name="courses" id="courses" class="container about staggered-test">
+        <h5>Professional Skills</h5>
+        <h6>Software &amp; Hardware</h6>
+        <hr>
+        <div class="row">
+          <div class="col s12 m6 l4">
+            <div class="card medium blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">AutoCAD</span>
+                <p>His palms are sweaty, knees weak, arms are heavy
+                   There's vomit on his sweater already: Mom's spaghetti</p>
+              </div>
+              <div class="card-action">
+                <a href="#"><i class="material-icons small">desktop_mac</i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card medium blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">HTML/CSS</span>
+                <p>Interior crocodile aligator I drive a chevrolet movie theater.
+                   Interior crocodile aligator I drive a chevrolet movie theater.</p>
+              </div>
+              <div class="card-action">
+                <a href="#"><i class="material-icons small">web</i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card medium blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">Python</span>
+                <p>I am a hard working student that currently goes to lecole culinaire
+                   with a gpa of 0.005 That may seem bad but trust me its really good.</p>
+              </div>
+              <div class="card-action">
+                <a href="#"><i class="material-icons small">code</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m6 l4">
+            <div class="card medium blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">Story</span>
+                <p>His palms are sweaty, knees weak, arms are heavy
+                   There's vomit on his sweater already: Mom's spaghetti</p>
+              </div>
+              <div class="card-action">
+                <a href="#">Bitches</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card medium blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">About Me</span>
+                <p>Interior crocodile aligator I drive a chevrolet movie theater.
+                   Interior crocodile aligator I drive a chevrolet movie theater.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card medium blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">Education</span>
+                <p>I am a hard working student that currently goes to lecole culinaire
+                     with a gpa of 0.005 That may seem bad but trust me its really good.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">Homepage</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+
+      <!--Activities-->
+      <div name="involvement" id="involvement" class="container about">
+        <h5>Activities</h5>
+        <h6>Clubs &amp; Design Teams</h6>
+        <hr>
+        <div class="row">
+          <div class="col s12 m6 l3">
+            <div class="card small blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">AutoCAD</span>
+                <p>His palms are sweaty, knees weak, arms are heavy
+                   There's vomit on his sweater already: Mom's spaghetti</p>
+              </div>
+              <div class="card-action">
+                <a href="#"><i class="material-icons small">desktop_mac</i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card small blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">HTML/CSS</span>
+                <p>Interior crocodile aligator I drive a chevrolet movie theater.
+                   Interior crocodile aligator I drive a chevrolet movie theater.</p>
+              </div>
+              <div class="card-action">
+                <a href="#"><i class="material-icons small">web</i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card small blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">Python</span>
+                <p>I am a hard working student that currently goes to lecole culinaire
+                   with a gpa of 0.005 That may seem bad but trust me its really good.</p>
+              </div>
+              <div class="card-action">
+                <a href="#"><i class="material-icons small">code</i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card small blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">Python</span>
+                <p>I am a hard working student that currently goes to lecole culinaire
+                   with a gpa of 0.005 That may seem bad but trust me its really good.</p>
+              </div>
+              <div class="card-action">
+                <a href="#"><i class="material-icons small">code</i></a>
+              </div>
+            </div>
+          </div>  
+        </div>
+        <div class="row">
+          <div class="col s12 m6 l3">
+            <div class="card small blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">Story</span>
+                <p>His palms are sweaty, knees weak, arms are heavy
+                   There's vomit on his sweater already: Mom's spaghetti</p>
+              </div>
+              <div class="card-action">
+                <a href="#">Bitches</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card small blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">About Me</span>
+                <p>Interior crocodile aligator I drive a chevrolet movie theater.
+                   Interior crocodile aligator I drive a chevrolet movie theater.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card small blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">Education</span>
+                <p>I am a hard working student that currently goes to lecole culinaire
+                     with a gpa of 0.005 That may seem bad but trust me its really good.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">Homepage</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card small blue-grey darken-1 z-depth-3">
+              <div class="card-content white-text">
+                <span class="card-title">Python</span>
+                <p>I am a hard working student that currently goes to lecole culinaire
+                   with a gpa of 0.005 That may seem bad but trust me its really good.</p>
+              </div>
+              <div class="card-action">
+                <a href="#"><i class="material-icons small">code</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+
+      <!--Bottom left floating button-->
+      <div class="fixed-action-btn vertical click-to-toggle hide-on-small-only" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating z-depth-3 btn-large blue-grey darken-3"><i class="material-icons waves-effect waves-light">keyboard_arrow_up</i>
+        </a>
+        <ul> 
+          <li><a class="btn-floating blue-grey darken-3 waves-effect waves-light z-depth-3 tooltipped" data-position="left" data-delay="50" data-tooltip="Something"><i class="material-icons">insert_chart</i></a></li>
+          <li><a class="btn-floating blue-grey darken-3 waves-effect waves-light z-depth-3 tooltipped" data-position="left" data-delay="50" data-tooltip="Something"><i class="material-icons">format_quote</i></a></li>
+          <li><a class="btn-floating blue-grey darken-3 waves-effect waves-light z-depth-3 tooltipped" data-position="left" data-delay="50" data-tooltip="Something"><i class="material-icons">publish</i></a></li>
+          <li><a class="btn-floating blue-grey darken-3 waves-effect waves-light z-depth-3 tooltipped" data-position="left" data-delay="50" data-tooltip="For Outlook Users" href="mailto:sunny.lella@mst.edu"><i class="material-icons">email</i></a></li>
+        </ul>
+      </div>
+      <br>
+      <br>
+      <br>
+
+      <!--Contact-->
+      <div name="contact" id="contact" class="container about">
+        <h5>Get In Touch With Me</h5>
+        <h6>Enter your info</h6>
+        <hr>
+          <div class="row">
+            <form action="mail.php" method="POST" class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input placeholder="Jon" id="first_name" type="text" name="first_name" class="validate">
+                  <label for="first_name">First Name</label>
+                </div>
+              <div class="input-field col s6">
+                <input placeholder="Snow" id="last_name" type="text" name="last_name" class="validate">
+                <label for="last_name">Last Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <textarea class="materialize-textarea validate" name="message" placeholder="Message" required></textarea>
+            <button class="btn waves-effect waves-light blue-grey darken-3 orange-text text-accent-3 z-depth-2" id="submit" type="submit" name="submit">Submit<i class="material-icons right">send</i></button>
+          </form>
+        </div>
+      </div>
+
+
+      <!--Footer-->
+      <div class="footer blue-grey darken-4">
+        <h1 class="white-text">footer</h1>
+      </div>
+
+  </body>
+</html>
+        
