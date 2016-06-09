@@ -65,6 +65,18 @@
         $(window).load(function() {
           Materialize.showStaggeredList(".staggered-list");
           }); 
+
+        var senseSpeed = 5;
+        var previousScroll = 0;
+        $(window).scroll(function(event){
+           var scroller = $(this).scrollTop();
+           if (scroller-senseSpeed > previousScroll){
+              $("div.nav-wrapper").filter(':not(:animated)').slideUp();
+           } else if (scroller+senseSpeed < previousScroll) {
+              $("div.nav-wrapper").filter(':not(:animated)').slideDown();
+           }
+           previousScroll = scroller;
+        });
       });
       </script>
 
@@ -82,29 +94,31 @@
       <div class="intro blue-grey darken-4 z-depth-2">
         <h1 class="white-text">Sunny Lella</h1>
       </div>-->
-
-      <nav>
-    <div class="nav-wrapper blue-grey darken-4 z-depth-2">
-      <a href="#!" class="brand-logo">Sunny Lella</a>
-      <ul class="right hide-on-med-and-down staggered-list">
-        <li><a href="#courses" id="anchor1" class="anchor-link">Skills</a></li>
-        <li><a href="#involvement" id="anchor2" class="anchor-link">Involvement</a></li>
-        <li><a href="collapsible.html">Something</a></li>
-        <li><a href="#contact" id="anchor4" class="anchor-link">Contact Me</a></li>
-      </ul>
-      <ul class="side-nav" id="slide-out">
-        <li><a href="#courses" id="anchor1" class="anchor-link">Skills</a></li>
-        <li><a href="#involvement" id="anchor2" class="anchor-link">Involvement</a></li>
-        <li><a href="collapsible.html">Something</a></li>
-        <li><a href="#contact" id="anchor4" class="anchor-link">Contact Me</a></li>
-      </ul>
-      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons orange-text text-accent-3">menu</i></a>
-    </div>
-  </nav>
-  <br>
-  <br>
-  <br>
-  <br>
+      <div class="navbar-fixed">
+        <nav class="z-depth-0" style="background-color: transparent;">
+          <div class="nav-wrapper blue-grey darken-4 z-depth-2">
+          <a href="#!" class="brand-logo">Sunny Lella</a>
+          <ul class="right hide-on-med-and-down staggered-list">
+            <li><a href="#courses" id="anchor1" class="anchor-link">Skills</a></li>
+            <li><a href="#involvement" id="anchor2" class="anchor-link">Involvement</a></li>
+            <li><a href="collapsible.html">Something</a></li>
+            <li><a href="#contact" id="anchor4" class="anchor-link">Contact Me</a></li>
+          </ul>
+          <ul class="side-nav" id="slide-out">
+            <li><a href="#courses" id="anchor1" class="anchor-link">Skills</a></li>
+            <li><a href="#involvement" id="anchor2" class="anchor-link">Involvement</a></li>
+            <li><a href="collapsible.html">Something</a></li>
+            <li><a href="#contact" id="anchor4" class="anchor-link">Contact Me</a></li>
+          </ul>
+          <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons orange-text text-accent-3">menu</i></a>
+          </div>
+        </nav>
+      </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 
       <!--first 3 cards-->      
