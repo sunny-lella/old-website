@@ -4959,7 +4959,7 @@ small {
   line-height: 37px;
 }
 
-/*Changes background color when hovering over floatin btn xxx*/
+/*Changes background color when hovering over floatin btn*/
 .btn-floating:hover {
   background-color: #455a64 !important;
 
@@ -5323,9 +5323,9 @@ a.waves-effect .waves-ripple {
 }
 
 .collapsible {
-  border-top: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-left: 1px solid #ddd;
+  border-top: 1px solid #546e7a;
+  border-right: none;
+  border-left: none;
   margin: 0.5rem 0 1rem 0;
 }
 
@@ -5336,7 +5336,7 @@ a.waves-effect .waves-ripple {
   line-height: 3rem;
   padding: 0 1rem;
   background-color: #fff;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgba(160, 160, 160, 0.2);
   color: #FFFFFF;
   font-weight: 400;
 }
