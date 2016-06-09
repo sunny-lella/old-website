@@ -4658,6 +4658,7 @@ small {
   text-transform: uppercase;
 }
 
+/*When hover over icons and text inside of card action*/
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
   color: #ffd8a6;
 }
@@ -4958,8 +4959,10 @@ small {
   line-height: 37px;
 }
 
+/*Changes background color when hovering over floatin btn xxx*/
 .btn-floating:hover {
-  background-color: #26a69a;
+  background-color: #455a64 !important;
+
 }
 
 .btn-floating:before {
