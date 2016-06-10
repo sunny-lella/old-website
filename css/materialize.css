@@ -8374,6 +8374,8 @@ body, html
     height: 1px;
 }
 
+
+/*Easing in cards*/
 .come-in {
   transform: translateY(150px);
   animation: come-in 0.8s ease forwards;
