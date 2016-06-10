@@ -6938,23 +6938,6 @@ $( document ).ready(function(){
       Materialize.toast("Thanks for stopping by!", 4000);
     } }
     ];
-    Materialize.scrollFire(options);
-    var win = $(window);
-    var allMods = $(".module");
-    allMods.each(function(i, el) {
-      var el = $(el);
-      if (el.visible(true)) {
-        el.addClass("already-visible"); 
-      } 
-    });
-    win.scroll(function(event) {
-      allMods.each(function(i, el) {
-        var el = $(el);
-        if (el.visible(true)) {
-          el.addClass("come-in"); 
-        } 
-     });  
-    });
     $(window).load(function() {
       Materialize.showStaggeredList(".staggered-list");
       }); 
@@ -7013,8 +6996,3 @@ $( document ).ready(function(){
 		});
 	});
 });
-
-
-
-
-
