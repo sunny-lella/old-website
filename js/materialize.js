@@ -6919,59 +6919,102 @@ Picker.extend( 'pickadate', DatePicker )
 }( jQuery ));
 
 
-(function($) {
+//MY CUSTOM JS CODE
 
-  /**
-   * Copyright 2012, Digital Fusion
-   * Licensed under the MIT license.
-   * http://teamdf.com/jquery-plugins/license/
-   *
-   * @author Sam Sehnert
-   * @desc A small plugin that checks whether elements are within
-   *     the user visible viewport of a web browser.
-   *     only accounts for vertical position, not horizontal.
-   */
+$( document ).ready(function(){
+    $(".button-collapse").sideNav();
+    $('a[href^="#"]').on('click',function (e) {
+      e.preventDefault();
+      var target = this.hash;
+      var $target = $(target);
+      $('html, body').stop().animate({
+        'scrollTop': $target.offset().top
+      }, 900, 'swing', function () {
+        window.location.hash = target;
+      });
+    });
+    var options = [
+    {selector: '.staggered-test', offset: 200, callback: function() {
+      Materialize.toast("Thanks for stopping by!", 4000);
+    } }
+    ];
+    Materialize.scrollFire(options);
+    var win = $(window);
+    var allMods = $(".module");
+    allMods.each(function(i, el) {
+      var el = $(el);
+      if (el.visible(true)) {
+        el.addClass("already-visible"); 
+      } 
+    });
+    win.scroll(function(event) {
+      allMods.each(function(i, el) {
+        var el = $(el);
+        if (el.visible(true)) {
+          el.addClass("come-in"); 
+        } 
+     });  
+    });
+    $(window).load(function() {
+      Materialize.showStaggeredList(".staggered-list");
+      }); 
 
-  $.fn.visible = function(partial) {
-    
-      var $t            = $(this),
-          $w            = $(window),
-          viewTop       = $w.scrollTop(),
-          viewBottom    = viewTop + $w.height(),
-          _top          = $t.offset().top,
-          _bottom       = _top + $t.height(),
-          compareTop    = partial === true ? _bottom : _top,
-          compareBottom = partial === true ? _top : _bottom;
-    
-    return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+    var senseSpeed = 6;
+    var previousScroll = 0;
+    $(window).scroll(function(event){
+       var scroller = $(this).scrollTop();
+       if (scroller-senseSpeed > previousScroll){
+          $("div.nav-wrapper").filter(':not(:animated)').slideUp();
+       } else if (scroller+senseSpeed < previousScroll) {
+          $("div.nav-wrapper").filter(':not(:animated)').slideDown();
+       }
+       previousScroll = scroller;
+    });
+    (function($) {
 
-  };
-    
-})(jQuery);
+	/**
+		* Copyright 2012, Digital Fusion
+		* Licensed under the MIT license.
+		* http://teamdf.com/jquery-plugins/license/
+		*
+		* @author Sam Sehnert
+		* @desc A small plugin that checks whether elements are within
+		*     the user visible viewport of a web browser.
+		*     only accounts for vertical position, not horizontal.
+	*/
 
-var win = $(window);
+	$.fn.visible = function(partial) {
+  		var $t            = $(this),
+      		$w            = $(window),
+      		viewTop       = $w.scrollTop(),
+      		viewBottom    = viewTop + $w.height(),
+      		_top          = $t.offset().top,
+      		_bottom       = _top + $t.height(),
+      		compareTop    = partial === true ? _bottom : _top,
+      		compareBottom = partial === true ? _top : _bottom;
 
-var allMods = $(".card");
-
-allMods.each(function(i, el) {
-  var el = $(el);
-  if (el.visible(true)) {
-    el.addClass("already-visible"); 
-  } 
+		return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+	};    
+	})(jQuery);
+	var win = $(window);
+	var allMods = $(".card");
+	allMods.each(function(i, el) {
+		var el = $(el);
+		if (el.visible(true)) {
+		el.addClass("already-visible"); 
+		} 
+	});
+	win.scroll(function(event) {
+		allMods.each(function(i, el) {
+		var el = $(el);
+		if (el.visible(true)) {
+  		el.addClass("come-in"); 
+		} 
+		});
+	});
 });
 
-win.scroll(function(event) {
-  
-  allMods.each(function(i, el) {
-    var el = $(el);
-    if (el.visible(true)) {
-      el.addClass("come-in"); 
-    } 
-  });
-  
-});
 
 
- 
 
 
