@@ -6995,4 +6995,4 @@ $( document ).ready(function(){
 		}
 		});
 	});*/
-};
+});
