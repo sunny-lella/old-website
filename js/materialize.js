@@ -1960,7 +1960,7 @@ $(document).ready(function(){
         }
         else {
           // Insert as text;
-          toast.innerHTML = html;
+          toast.innerHTML = html; 
         }
         // Bind hammer
         var hammerHandler = new Hammer(toast, {prevent_default: false});
@@ -2539,9 +2539,9 @@ $(document).ready(function(){
 		    var offset = $(this.hash).offset().top + 1;
 
 //          offset - 200 allows elements near bottom of page to scroll
-
+			
 	    	$('html, body').animate({ scrollTop: offset - 200 }, {duration: 400, queue: false, easing: 'easeOutCubic'});
-
+			
 		  });
 		});
 		options = options || {
@@ -2742,7 +2742,7 @@ $(document).ready(function(){
         $(this).addClass('tabbed');
         var $this = $(this);
         $this.one('blur', function(e) {
-
+          
           $(this).removeClass('tabbed');
         });
         return;
@@ -6940,7 +6940,7 @@ $( document ).ready(function(){
     ];
     $(window).load(function() {
       Materialize.showStaggeredList(".staggered-list");
-      });
+      }); 
 
     var senseSpeed = 6;
     var previousScroll = 0;
@@ -6953,7 +6953,8 @@ $( document ).ready(function(){
        }
        previousScroll = scroller;
     });
-    /*(function($) {
+    
+    (function($) {
 
 	/**
 		* Copyright 2012, Digital Fusion
@@ -6964,7 +6965,7 @@ $( document ).ready(function(){
 		* @desc A small plugin that checks whether elements are within
 		*     the user visible viewport of a web browser.
 		*     only accounts for vertical position, not horizontal.
-
+	*/
 
 	$.fn.visible = function(partial) {
   		var $t            = $(this),
@@ -6977,22 +6978,27 @@ $( document ).ready(function(){
       		compareBottom = partial === true ? _top : _bottom;
 
 		return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-	};
+	};    
 	})(jQuery);
 	var win = $(window);
 	var allMods = $(".card");
 	allMods.each(function(i, el) {
 		var el = $(el);
 		if (el.visible(true)) {
-		el.addClass("already-visible");
-		}
+		el.addClass("already-visible"); 
+		} 
 	});
 	win.scroll(function(event) {
 		allMods.each(function(i, el) {
 		var el = $(el);
 		if (el.visible(true)) {
-  		el.addClass("come-in");
-		}
+  		el.addClass("come-in"); 
+		} 
 		});
-	});*/
+	});
 });
+
+
+
+
+
