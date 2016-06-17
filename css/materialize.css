@@ -8391,3 +8391,17 @@ body, html
 @keyframes come-in {
   to { transform: translateY(0); }
 }
+
+.profile {
+    border-radius: 50%;
+    display: inline-block;
+    background-color: orange;
+}
+
+.profile-container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+  padding-bottom: 2em;
+  padding-top: 2em;
+}
