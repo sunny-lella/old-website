@@ -6986,7 +6986,7 @@ $( document ).ready(function(){
 	var win = $(window);
 	var allMods = $(".card");
     
-    if($(window).width()>=993) {
+    if(navigator.userAgent.indexOf('Safari') != -1 || ((navigator.userAgent.indexOf('Safari')=-1) && (window).width()>=993)) {
         allMods.each(function(i, el) {
 		  var el = $(el);
 		  if (el.visible(true)) {
