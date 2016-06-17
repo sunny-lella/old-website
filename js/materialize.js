@@ -6986,7 +6986,7 @@ $( document ).ready(function(){
 	var win = $(window);
 	var allMods = $(".card");
     
-    if($(window).>=993) {
+    if($(window).width()>=993) {
         allMods.each(function(i, el) {
 		  var el = $(el);
 		  if (el.visible(true)) {
