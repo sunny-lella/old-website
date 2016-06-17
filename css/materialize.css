@@ -8395,7 +8395,7 @@ body, html
 .profile {
     border-radius: 50%;
     display: inline-block;
-    background-color: orange;
+    background-color: #FF9800;
 }
 
 .profile-container {
