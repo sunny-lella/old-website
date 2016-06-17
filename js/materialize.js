@@ -4,17 +4,18 @@
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
 // Check for jQuery.
-if (typeof(jQuery) === 'undefined') {
+if (typeof (jQuery) === 'undefined') {
   var jQuery;
   // Check if require is a defined function.
-  if (typeof(require) === 'function') {
+  if (typeof (require) === 'function') {
     jQuery = $ = require('jquery');
   // Else use the dollar sign alias.
   } else {
     jQuery = $;
   }
 }
-;/*
+;
+/*
  * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
  *
  * Uses the built in easing capabilities added In jQuery 1.1
@@ -6985,7 +6986,7 @@ $( document ).ready(function(){
 	var win = $(window);
 	var allMods = $(".card");
     
-    if(navigator.userAgent.indexOf('Safari') != -1) {
+    if($(window).>=993) {
         allMods.each(function(i, el) {
 		  var el = $(el);
 		  if (el.visible(true)) {
