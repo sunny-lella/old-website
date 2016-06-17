@@ -6986,7 +6986,7 @@ $( document ).ready(function(){
 	var win = $(window);
 	var allMods = $(".card");
     
-    if(!(navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+    if((navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
                navigator.userAgent && !navigator.userAgent.match('CriOS'))){
         allMods.each(function(i, el) {
 		  var el = $(el);
