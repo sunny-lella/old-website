@@ -6942,6 +6942,7 @@ $( document ).ready(function(){
       Materialize.showStaggeredList(".staggered-list");
       }); 
 
+
     var senseSpeed = 6;
     var previousScroll = 0;
     $(window).scroll(function(event){
@@ -6953,6 +6954,7 @@ $( document ).ready(function(){
        }
        previousScroll = scroller;
     });
+
     
     (function($) {
 
@@ -6966,7 +6968,6 @@ $( document ).ready(function(){
 		*     the user visible viewport of a web browser.
 		*     only accounts for vertical position, not horizontal.
 	*/
-
 	$.fn.visible = function(partial) {
   		var $t            = $(this),
       		$w            = $(window),
@@ -6978,24 +6979,28 @@ $( document ).ready(function(){
       		compareBottom = partial === true ? _top : _bottom;
 
 		return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-	};    
+	};  
 	})(jQuery);
+
 	var win = $(window);
 	var allMods = $(".card");
-	allMods.each(function(i, el) {
-		var el = $(el);
-		if (el.visible(true)) {
-		el.addClass("already-visible"); 
-		} 
-	});
-	win.scroll(function(event) {
-		allMods.each(function(i, el) {
-		var el = $(el);
-		if (el.visible(true)) {
-  		el.addClass("come-in"); 
-		} 
-		});
-	});
+    
+    if(navigator.userAgent.indexOf('Safari') != -1) {
+        allMods.each(function(i, el) {
+		  var el = $(el);
+		  if (el.visible(true)) {
+		  el.addClass("already-visible"); 
+		  } 
+	   });
+	   win.scroll(function(event) {
+		  allMods.each(function(i, el) {
+		  var el = $(el);
+		  if (el.visible(true)) {
+  		    el.addClass("come-in"); 
+		  } 
+		  });
+	   });
+    };
 });
 
 
