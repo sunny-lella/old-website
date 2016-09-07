@@ -8409,3 +8409,11 @@ body, html
 .bold {
     font-weight: bold;
 }
+
+.more-space {
+  line-height:1.8;
+}
+
+.no-pointer {
+  cursor: default;
+}
